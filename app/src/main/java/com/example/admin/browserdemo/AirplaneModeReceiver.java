@@ -32,7 +32,7 @@ public class AirplaneModeReceiver extends BroadcastReceiver{
             PendingIntent pending = PendingIntent.getActivity(context, 1, google, 0);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setContentTitle("Google")
-                    .setContentText("It's time to go Google")
+                    .setContentText("It's time to go Google@!")
                     .setSmallIcon(android.R.drawable.btn_radio)
                     .setContentIntent(pending);
 
@@ -49,6 +49,7 @@ public class AirplaneModeReceiver extends BroadcastReceiver{
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
+
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
